@@ -15,5 +15,13 @@
 // console.log(gamecount);
 // ++gamecount
 // console.log(gamecount);
-console.log("2">1);
+console.log("2">1);//comparision of different data types 
+// will obviously lead to ambiguity of results
+
 console.log("02">1);
+//another example of the same
+console.log(null>0)
+console.log(null==0)
+console.log(nul>=0)
+
+
