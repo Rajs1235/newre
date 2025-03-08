@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="400 px" id="tiger" src="https://thumbs.dreamstime.com/b/bengal-tiger-lurks-jungle-illustration-oil-painting-bengal-tiger-lurks-jungle-illustration-oil-painting-perfect-349921460.jpg" "></li>
+            <li><img width="400 px" id="cat"src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="" "></li>
+            <li><img width="400px" id="dog" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoBuMvSuYezLE9rwI-zOJeIOmcIGfDPqOvFA&s" "></li>
+       
+       <li>    <a href="https://gemini.google.com/app/df094e924cd976b2?hl=en-IN" id="g">click to go to gemini</a>       </li> 
+    </ul>
+    </div>
+
+</body>
+<script> 
+//    document.getElementById('tiger').onclick=function(){
+//     //     //onclick event-->ok but less features
+//         alert("tiger-clicked")
+//     }
+// //best approach
+//     document.getElementById('dog').addEventListener('click',function(e){
+// alert("dog clicked")
+// console.log(e);
+// //click krne pr bahhut sare events mile jo ki pointer event h
+
+
+//     },false)//true false related to event propogation
+
+//     //event propogation: 1)event propogatioon,2)event public
+//     //third parameter false h kabhi likhte h kabhi nhi 
+//     document.getElementById('cat').onclick=function(){
+//     //     //onclick event-->ok but less features
+//         alert("pussy-clicked")
+//     }
+//     //isme s type timestamp default prevented
+//     //target, toelement,src element,curr target
+//     //clientx,clienty,screen x,screen y
+//     //altkey,ctrlkey,shiftkey,keycode
+//     /*
+//     attachEvent()>pehle tha
+//     */
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log("clicked inside ul");
+    
+// })
+
+// document.getElementById('cat').addEventListener('click',function(e){
+//     console.log("clicked cat");
+    
+// })
+// document.getElementById('tiger').addEventListener('click',function(e){
+//     console.log("clicked tiger");
+    
+// })
+// document.getElementById('dog').addEventListener('click',function(e){
+//     console.log("clicked dog");
+    
+// })
+
+// document.getElementById('g').addEventListener('click',function(e){
+// e.preventDefault();
+// e.stopPropagation();
+//     console.log("google clicked");
+
+// })
+// event propogation=>
+//BUBBLING UP  bottom to top jb false hoga
+
+//wrna jab true hoga to top to boottom aaega 
+//basically event hoonge toop to boottoom jb true hoga
+
+document.querySelector('#images').addEventListener
+('click',function(e){
+console.log(e.target.parentNode);
+if(e.target.tagName==='IMG'){
+    //agr target ka tag image h to hi remove krnege
+    
+    let removeit=e.target.parentNode//jispe click kiya use remove kr diya
+removeit.remove()}
+},false)
+
+//agr image p click kya tha to wo remoove ho jata 
+//
+</script>
+
+</html>
