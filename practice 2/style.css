@@ -1,70 +1,77 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-color:#fff
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff
 }
 
-h1{
+h1 {
     text-align: left;
     justify-content: center;
     align-content: center;
     display: flex;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:goldenrod;
+    background-color: goldenrod;
 }
-.container{
+
+.container {
     position: relative;
 }
-.clock{
+
+.clock {
     width: 300px;
-    height:300px;
+    height: 300px;
     border-radius: 50%;
-    background-color:grey;
-    border:10px solid lightblue;
+    background-color: grey;
+    border: 10px solid lightblue;
     box-shadow: 0px 0px 30px black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.clock span{
-    position:absolute;
-transform: rotate(calc(30deg * var(--i)));
-inset:12px;
-text-align: center;
+
+.clock span {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
 }
 
-.clock span b{
+.clock span b {
     transform: rotate(calc(-30deg * var(--i)));
     display: inline-block;
     font-size: 20px;
 }
-.clock::before{
+
+.clock::before {
     content: '';
     position: absolute;
     width: 10px;
-    height:10px;
+    height: 10px;
     border-radius: 50%;
-    background-color:white;
-    z-index:2;
+    background-color: white;
+    z-index: 2;
 }
-.hand{
-    position:absolute;
-    display:flex;
-    justify-content:center ;
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
-.hand i{
+
+.hand i {
     position: absolute;
-  
+
     background-color: var(--clr);
     width: 4px;
-    height:var(--h);
+    height: var(--h);
     border-radius: 8px;
 }
