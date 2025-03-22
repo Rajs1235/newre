@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        color: blueviolet;
+    }
+</style>
+<body style="background-color: black;">
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const ur='https://api.github.com/users/hiteshchoudhary'
+  const xhr= new XMLHttpRequest();
+xhr.open('GET',ur)//open aise directly call nhi hota instead
+
+xhr.onreadystatechange=function(){
+    console.log(xhr.readyState);
+    if (xhr.readyState===4) {
+        //=>NOTE : the response from url mostly is string and not object
+        const data=JSON.parse(this.responseText)//string to JSON
+
+        console.log(typeof data);//ab object bn gya
+        
+        console.log(data);
+      console.log(data.followers);//this lga k current context ki bat kr rhe h
+      //
+        console.log(data)
+    }
+}
+//pehli bar m open hone p 0 s 1 hogyi readystate
+//now abhi continously track krne ko nhi boli h hmne
+//console core javascript ka part hi nhi h instead 
+
+xhr.send()//send call marni padti hai
+</script>
+</html>
