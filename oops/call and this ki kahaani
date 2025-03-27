@@ -1,0 +1,14 @@
+function setusername(username){
+    this.username=username;
+    console.log("called");
+    
+}
+function createaccount(username,email,password){
+    setusername.call(this,username);//taki uska reference hold krke rkh pae hm wrna call k
+    //baad uska execution context clean ho jata hai isilie hme thhis ko use krna padega wrna phir call hone k bad
+    //bhi wo gayab ho jaega
+    this.email=email;
+    this.password=password;
+}
+const chai=new createaccount("chai","chai@meesho.com","6565")
+console.log(chai);
