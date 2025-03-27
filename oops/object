@@ -1,0 +1,33 @@
+function multby5(num) {
+    return num * 5
+}
+multby5.power = 2
+// console.log(multby5(5));
+// console.log(multby5.power);
+// console.log(multby5.prototype);
+
+//this implies that function ho array ho string ho abko hm object mn skte h
+//this is protootypal inheritence isi liye isme multiple prototype mil rhe the
+
+function createuser(username, score) {
+    this.username = username;
+    this.score = score;
+}
+
+createuser.prototype.increment = function () {
+    this.score++;
+}
+createuser.prototype.print = function () {
+    console.log(`score is ${this.score}`);
+
+}
+const chai = new createuser("chai", 25)//using the new keyword creates a new object
+//us object m prototype inject kia
+//usme method  rhenge
+//const m prototype linked hota h phir usme  const call hota h phir bnta h
+const tea = new createuser("tea", 250)
+chai.increment();
+console.log(chai);
+tea.increment();
+console.log(tea);
+chai.print();
