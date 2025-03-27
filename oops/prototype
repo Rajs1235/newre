@@ -1,0 +1,56 @@
+let myname="raj    "
+console.log(myname.truelength);//method chahiiye y wala
+let myheros=["thor","spiderman"];
+let heropower={
+    thor:"hammer",
+    spiderman:"sling",
+    getspider:function(){
+        console.log(`spidy pwr is {this.spiderman}`);
+        
+    }
+}
+
+Object.prototype.hitesh=function () {
+    console.log(`hitesh is present in all obj`);
+    
+}
+Array.prototype.hey=function () {
+    console.log(`hitesh helo`);
+    
+}
+// myheros.hitesh();
+// myheros.hey();//basically top to bottom m access milta jagea aur same level p bhi share mnhi hogha
+//heropower.hey();
+
+
+//inheritence
+const user={
+    name:"chai",
+    email:"chai@ggl.com"
+}
+const teacher={
+    makevd:true
+}
+const teachsupport={
+    isavail:false
+}
+const tas={
+    makeassign:'js assign',
+    fulltime: true,
+    __proto__:teachsupport
+}
+teacher.__proto__=user//older method
+//almost same hi cheeze ho rhi h bs 
+Object.setPrototypeOf(teachsupport,teacher)
+
+let anusername="chaiaurcode    "
+String.prototype.truelength=function () {
+
+    console.log(`${this}`);
+     
+    console.log(`true len is: ${this.trim().length}`);
+    
+}
+anusername.truelength();
+"htsh".truelength();
+"icdtea".truelength();//isi k lie hoga
