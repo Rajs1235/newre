@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: gray;">
+   <button id="orange">orange</button> 
+   <button id="green">green</button> 
+</body>
+<script>
+//     function outer(){//kahani thodi class jaisi h parent class jaise hi parent function ya to uske upr tha hierarchy m 
+//     // usse to le skte h  basically thoda class jaisa inheritence parent s child le lega
+//     //pr do child aps m nhi kr skte share parent child s nhi lega 
+//         let user="hitesh"
+// function inner(){
+//     let secret="my123"
+//     console.log("inner",user);
+// }
+// function innertwo(){
+//     console.log("innertwo",user);
+//     console.log(secret);
+    
+// }
+//  inner();
+// innertwo(); 
+//   }
+//  outer();
+//     console.log("outer",user);
+
+// closure ki kahani h ki func return krne p sirf whi nhi
+//  blki uska poora lexical scope bhi return ho gya
+function makeFunc() {
+    const name = "Mozilla";
+    function displayName() {
+      console.log(name);
+    }
+    return displayName;
+  }
+  
+  const myFunc = makeFunc();
+  myFunc();    
+    </script>
+    <script>
+    //    document.getElementById("orange").onclick=function(){
+    //     document.body.style.backgroundColor ="orange"
+    //    }
+    //    document.getElementById("green").onclick=function(){
+    //     document.body.style.backgroundColor ="green"
+    //    }
+
+    function clickhandler(color){
+return function () {
+    document.body.style.backgroundColor =`${color}`
+}
+    }
+    document.getElementById('orange').onclick= clickhandler("orange")
+    document.getElementById('green').onclick= clickhandler("green")
+    </script>
+</html>
