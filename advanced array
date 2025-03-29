@@ -1,0 +1,46 @@
+//continous vs holey array
+
+//SMI(small integer)
+//packed element
+//Double (float,string,function)
+
+const arr=[1,2,3,4,5,6,7,8,9] ///packed smi elements
+//packed smi type =>best type of array bs usme sirf integer aa skte h
+arr.push(6.0)
+//now array is packed with double elements
+arr.push('7')
+//packed with string element
+//NOTE:=>once u start packing the array u start with smi type then u keep on
+//downgrading the nature  y adding the values of different types
+
+const arrtwo=[1,2,3,4,5,6]
+arrtwo[10]=11;
+//HOLEY ELEMENTS kyuki usme beeech m element nnhi h
+console.log(arrtwo);
+console.log(arrtwo.length);
+console.log(arrtwo[9]);
+//sbse pehle bound check hooga 
+//phir hasownproperty(arrtwo.prototype,10) check hooga ki aisi koi property h to nhi
+//phir hasownproperty(arrtwo.prototype,11) check hooga ki aisi koi property h to nhi
+
+//holes are very expensive in js
+
+const arr3=[1,2,3,4,5]
+console.log(arr3[3]);
+
+//smi>double>packed
+//holey smi>holey double>holey packed
+
+//ek bar downgrade k bad upgrade impossible ho jata h
+
+const arrfour=new Array(3)///yha hmne ek 3 size k array ko declare kia
+arrfour[0]='1'//phir hr ek index p value dal dia 
+arrfour[1]='2'//initially holey tha array phir usme values dal di
+arrfour[2]='3'//to y sab holey element h
+
+const arrfive=[]//instead hmne ek array bnaya uska size fix nhi kia
+arrfive.push('1')//instead we kept on pushing the elements on will
+arrfive.push('2')//isilie chance hi nhi h ki kabhi element k pe hole hota
+arrfive.push('3')//thus it is packed array
+
+///isi type k m hm agr nan dal de ya infinity dalde to y packed double bn jagea
